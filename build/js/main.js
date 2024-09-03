@@ -1,15 +1,30 @@
 "use strict";
-let myName;
-let age;
-let isHuman;
-let album;
-myName = 'Lily';
-age = 31;
-isHuman = true;
-album = 'Eyes Wide Open';
-const sum = (a, b) => {
-    return a + b;
+let actorsNames = ['Erika', 'Blake', 'Amir'];
+console.log(actorsNames);
+let ages = ['sixty', 20, 30];
+let mixedData = ['string', 10, true];
+actorsNames[0] = 'Joel';
+actorsNames.push('Keith');
+ages[0] = 42;
+ages.unshift('22');
+let test = [];
+let books = [];
+books.push('The Poppy War');
+let myTuple = ['Joel', 40, true];
+let mixed = ['Blake', 24, true];
+myTuple[1] = 42;
+let myObj;
+myObj = [];
+console.log(typeof myObj);
+myObj = books;
+myObj = {};
+const exampleObj = {
+    prop1: 'Lily',
+    prop2: true
 };
-let postId;
-let isActive;
-let re = /\w+/g;
+exampleObj.prop1 = 'Delia';
+let actor1 = {
+    name: 'Keith David',
+    active: true,
+    roles: ["Dr Facilier", "Husk", "Andre Curtis"]
+};

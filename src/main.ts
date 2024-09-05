@@ -36,8 +36,8 @@ const exampleObj = {
 
 exampleObj.prop1 = 'Delia'
 
-type actorRoles = {
-    name: String,
+interface actorRoles {
+    name?: String,
     active: boolean,
     roles: (string | number)[]
 }
@@ -47,6 +47,33 @@ let actor1: actorRoles = {
     active: true,
     roles: ["Dr Facilier", "Husk", "Andre Curtis"]
 }
+
+let actor2: actorRoles = {
+    name: 'Hugh Jackman',
+    active: true,
+    roles: ['Wolverine', 'P. T. Barnum']
+}
+
+const greetActor = (actor: actorRoles) => {
+    if (actor.name) {
+        return `Hello ${actor.name.toUpperCase()}!`
+    }
+    return 'Hello!'
+}
+
+console.log(greetActor(actor1))
+
+// Enums
+
+enum Grade {
+    U = 1,
+    D,
+    C,
+    B,
+    A
+}
+
+console.log(Grade.U)
 
 
 

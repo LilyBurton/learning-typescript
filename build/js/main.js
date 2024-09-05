@@ -28,3 +28,25 @@ let actor1 = {
     active: true,
     roles: ["Dr Facilier", "Husk", "Andre Curtis"]
 };
+let actor2 = {
+    name: 'Hugh Jackman',
+    active: true,
+    roles: ['Wolverine', 'P. T. Barnum']
+};
+const greetActor = (actor) => {
+    if (actor.name) {
+        return `Hello ${actor.name.toUpperCase()}!`;
+    }
+    return 'Hello!';
+};
+console.log(greetActor(actor1));
+// Enums
+var Grade;
+(function (Grade) {
+    Grade[Grade["U"] = 1] = "U";
+    Grade[Grade["D"] = 2] = "D";
+    Grade[Grade["C"] = 3] = "C";
+    Grade[Grade["B"] = 4] = "B";
+    Grade[Grade["A"] = 5] = "A";
+})(Grade || (Grade = {}));
+console.log(Grade.U);

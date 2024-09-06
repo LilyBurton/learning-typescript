@@ -1,40 +1,7 @@
-let actorsNames = ['Erika', 'Blake', 'Amir']
-console.log(actorsNames)
+// Type Aliases 
+type stringOrNumber = String | Number
 
-let ages = ['sixty', 20, 30]
-
-let mixedData = ['string', 10, true]
-
-actorsNames[0] = 'Joel'
-actorsNames.push('Keith')
-
-ages[0] = 42
-ages.unshift('22')
-
-let test = []
-let books: string[] = []
-books.push('The Poppy War')
-
-let myTuple: [string, number, boolean] = ['Joel', 40, true]
-
-let mixed = ['Blake', 24, true]
-
-myTuple[1] = 42
-
-let myObj: object
-myObj = []
-console.log(typeof myObj)
-
-myObj = books
-
-myObj = {}
-
-const exampleObj = {
-    prop1: 'Lily',
-    prop2: true 
-}
-
-exampleObj.prop1 = 'Delia'
+type stringOrNumberArray = (string | number)[]
 
 interface actorRoles {
     name?: String,
@@ -42,39 +9,39 @@ interface actorRoles {
     roles: (string | number)[]
 }
 
-let actor1: actorRoles = {
-    name: 'Keith David',
-    active: true,
-    roles: ["Dr Facilier", "Husk", "Andre Curtis"]
+type userId = stringOrNumber
+
+// Literal Type
+let myName: 'Lily'
+
+let userName: 'Lily' | 'Jean' | 'Erika'
+userName = 'Erika'
+
+// Functions
+
+const add = (a: number, b: number): number => {
+    return a + b
 }
 
-let actor2: actorRoles = {
-    name: 'Hugh Jackman',
-    active: true,
-    roles: ['Wolverine', 'P. T. Barnum']
+const logMsg = (message: any): void => {
+    console.log(message)
 }
 
-const greetActor = (actor: actorRoles) => {
-    if (actor.name) {
-        return `Hello ${actor.name.toUpperCase()}!`
+logMsg('Hello World!')
+logMsg(add(100, 10))
+
+let subtract = function (c: number, d: number):
+    number {
+        return c - d
     }
-    return 'Hello!'
-}
 
-console.log(greetActor(actor1))
+    // type mathFunction = (a: number, b: number) => number
+    interface mathFunction {
+        (a: number, b: number): number
+    }
 
-// Enums
+    let multiply: mathFunction = function (c, d) {
+        return c * d
+    }
 
-enum Grade {
-    U = 1,
-    D,
-    C,
-    B,
-    A
-}
-
-console.log(Grade.U)
-
-
-
-
+    logMsg(multiply(30, 7))

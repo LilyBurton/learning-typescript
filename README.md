@@ -1,0 +1,1 @@
+Learning TypeScript through a typescript course on Youtube done by Dave Gray https://www.youtube.com/watch?v=gieEQFIfgYc&t=5108s. I absolutely love his tutorial videos that helps me understand the language easily by understanding the basics, create a project with it and how to use it in real life situations.

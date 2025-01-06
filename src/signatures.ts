@@ -1,6 +1,11 @@
 // Index Signatures
 
+// interface TransactionObj {
+//     [index: string]: number 
+// }
+
 interface TransactionObj {
+    readonly [index: string]: number
     Pizza: number,
     Books: number,
     Job: number
@@ -14,3 +19,17 @@ const todaysTransaction: TransactionObj = {
 
 console.log(todaysTransaction.Pizza)
 console.log(todaysTransaction['Pizza'])
+
+let prop: string = 'Pizza'
+console.log(todaysTransaction[prop])
+
+const todaysNet = (transactions: TransactionObj):
+number => {
+    let total = 0
+    for (const transaction in transactions) {
+        total += transactions[transaction]
+    }
+    return total
+}
+
+console.log(todaysNet(todaysTransaction))

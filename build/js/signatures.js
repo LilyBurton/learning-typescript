@@ -7,3 +7,13 @@ const todaysTransaction = {
 };
 console.log(todaysTransaction.Pizza);
 console.log(todaysTransaction['Pizza']);
+let prop = 'Pizza';
+console.log(todaysTransaction[prop]);
+const todaysNet = (transactions) => {
+    let total = 0;
+    for (const transaction in transactions) {
+        total += transactions[transaction];
+    }
+    return total;
+};
+console.log(todaysNet(todaysTransaction));
